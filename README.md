@@ -47,13 +47,14 @@ What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
-The algorithm loops through all cities, considering each of them as a starting point and finding the shortest path for each of them, then comparing that path to every other to find the overall shortest path for the entire matrix. Each city calls the recursive heldKarp function, which would consider at most every subset of the matrix, $2^n$, so $n * 2^n$. In the worst case, every iteration would need to calculate the shortest path, would would involve looping through all cities with the forEach function. So, $(n * 2^n) * n$. Therefore the worst case time complexity of my implementation would be $\Theta(n^2 * 2^n)$. 
+The algorithm loops through all cities, considering each of them as a starting point and then finding the shortest path, comparing all of them to determine the overall shortest path. Each city calls the recursive heldKarp function, which would consider at most every subset of the cities, $2^n$, so $n * 2^n$. In the worst case, every iteration would need to calculate the shortest path, would would involve looping through all cities with the forEach function. So, $(n * 2^n) * n$. Therefore the worst case time complexity of my implementation would be $\Theta(n^2 * 2^n)$. 
+
+The worst-case memory complexity would be $\Theta(2^n)$ because the subsets, $2^n$, would be stored before being wiped clean in the next iteration. 
 
 
 ### Sources and Plagiarism 
 
-Looked at this repository: https://github.com/COSC3020/tsp-held-karp-tlaceby/blob/main/code.js
-
+Referenced this repository: https://github.com/COSC3020/tsp-held-karp-tlaceby/blob/main/code.js
 https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
