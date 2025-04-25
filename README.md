@@ -49,7 +49,7 @@ reasoning, to this markdown file.
 
 The algorithm loops through all cities, considering each of them as a starting point and then finding the shortest path, comparing all of them to determine the overall shortest path. Each city calls the recursive heldKarp function, which would consider at most every subset of the cities, $2^n$, so $n * 2^n$. In the worst case, every iteration would need to calculate the shortest path, would would involve looping through all cities with the forEach function. So, $(n * 2^n) * n$. Therefore the worst case time complexity of my implementation would be $\Theta(n^2 * 2^n)$. 
 
-The worst-case memory complexity would be $\Theta(2^n)$ because the subsets, $2^n$, would be stored before being wiped clean in the next iteration. 
+The worst-case memory complexity would be $\Theta(2^n * n)$ because you store $2^n$ total subsets for every different start $n$. 
 
 
 ### Sources and Plagiarism 
