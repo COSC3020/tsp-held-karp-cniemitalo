@@ -6,11 +6,10 @@ function tsp_hk(distance_matrix) {
     }
 
     let shortest = Infinity; 
+    let memo = new Map(); 
 
     for (let start = 0; start < n; start++) {
-        //for storing values 
         //fill cities with 0, 1, 2, ...
-        let memo = new Map(); 
         let cities = [...Array(n).keys()]; 
 
         //find the shortest path for this starting point 
